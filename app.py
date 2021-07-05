@@ -1,5 +1,4 @@
 import streamlit as st
-from Multiapp import MultiApp
 import app2
 import main
 import codecs
