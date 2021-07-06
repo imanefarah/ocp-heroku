@@ -152,10 +152,7 @@ def app():
     fig=px.line(df3[f'{selected_feature}'], x=df3.index, y={selected_feature})
     fig.update_xaxes(rangeslider_visible=True)
     st.plotly_chart(fig)
-  if f4.button('Explore data'):
-    advert_report = sv.analyze(df)
-    advert_report.show_html('Advertising.html')
-
+  
 #Model
   st.markdown('### ** Model**')
   st.write(f'Regressor = {Regressor_name}')
