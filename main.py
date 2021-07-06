@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-import sweetviz as sv
 from sklearn.linear_model import LinearRegression, BayesianRidge
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
