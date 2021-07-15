@@ -13,7 +13,6 @@ from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 import plotly.express as px
-from streamlit_tags import st_tags_sidebar
 html_temp= """
     <div style="background-color:#464e5f;padding:10px;border-radius:10">
     <h1 style="color:white;text-align:center;">
