@@ -1,9 +1,33 @@
 import streamlit as st
 import app2
-import codecs
+import main
 import streamlit.components.v1 as components
-from PIL import Image
-st.sidebar.image: st.sidebar.image("https://lh3.googleusercontent.com/proxy/PeIGIMPNzsk5ofZkoWlxXaCOp--0X50lGJNstKJ_YkEqX6RwtLuLpRTv5tBjaB2QX8LAIgYQfXk5zliK0Dt3xdJxRmdjlV6mftTu6mqedjZ-BjGbLLfDSvjAKl45FvGEHzUEbERkqUE", use_column_width=True)
+
+
+class MultiApp:
+
+
+    def __init__(self):
+        self.apps = []
+
+    def add_app(self, title, func):
+
+        self.apps.append({
+            "title": title,
+            "function": func
+        })
+
+    def run(self):
+        # app = st.sidebar.radio(
+        st.sidebar.header(' Navigation')
+        app = st.sidebar.selectbox(
+            '',
+            self.apps,
+            format_func=lambda app: app['title'])
+
+        app['function']()
+
+st.sidebar.image: st.sidebar.image("https://lh3.googleusercontent.com/proxy/ND079E8kxHUE4WKVb-1s-sANQ1WR3KhOPBx7UzuGdIp2ZxI6f6wnsxiNIYA7HsX-wwVV4gksZlUuJrkGJMD1D3JJ5NfAdiIWm3Qj5hZlFV9sO31yYGgRhS_puRx9DjadmfX2upT8L8I", use_column_width=True)
 
 primaryColor = st.get_option("theme.primaryColor")
 s = f"""
