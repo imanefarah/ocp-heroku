@@ -15,7 +15,12 @@ import plotly.express as px
 
 st.set_page_config(page_title='OCP CB', page_icon="🖖")
 def app():
-
+  [theme]
+  primaryColor = "#579D02"
+  backgroundColor = "#FFFFFF"
+  secondaryBackgroundColor = "##272727"
+  textColor = "#272727"
+  font = "sans serif"
   padding = 0
   st.markdown(f""" <style>
     .reportview-container .main .block-container{{
