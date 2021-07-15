@@ -19,12 +19,6 @@ html_temp= """
     </div>
     """
 def app():
- [theme]
- primaryColor = "#579D02"
- backgroundColor = "#FFFFFF"
- secondaryBackgroundColor = "##272727"
- textColor = "#272727"
- font = "sans serif"
 # Download CSV data 
  def filedownload(df, filename):
     csv = df.to_csv(index=False)
