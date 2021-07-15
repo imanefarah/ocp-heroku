@@ -18,16 +18,15 @@ html_temp= """
     <h1 style="color:white;text-align:center;">
     </div>
     """
-
 def app():
-  [theme]
-  primaryColor = "#579D02"
-  backgroundColor = "#FFFFFF"
-  secondaryBackgroundColor = "##272727"
-  textColor = "#272727"
-  font = "sans serif"
-# Download CSV data
-  def filedownload(df, filename):
+ [theme]
+ primaryColor = "#579D02"
+ backgroundColor = "#FFFFFF"
+ secondaryBackgroundColor = "##272727"
+ textColor = "#272727"
+ font = "sans serif"
+# Download CSV data 
+ def filedownload(df, filename):
     csv = df.to_csv(index=False)
     b64 = base64.b64encode(csv.encode()).decode()  # strings <-> bytes conversions
     href = f'<a href="data:file/csv;base64,{b64}" download={filename}>Download {filename} File</a>'
