@@ -1,6 +1,5 @@
 import streamlit as st
 import app2
-import main
 import codecs
 import streamlit.components.v1 as components
 from PIL import Image
