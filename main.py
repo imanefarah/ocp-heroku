@@ -8,14 +8,9 @@ import xgboost
 from sklearn.linear_model import Lasso,Ridge
 from sklearn.linear_model import LassoCV
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-import os
 from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 import plotly.express as px
-import quandl
-import yfinance as yf
-from streamlit_tags import st_tags_sidebar
-import pyarrow
 
 
 st.set_page_config(page_title='OCP CB', page_icon="🖖")
