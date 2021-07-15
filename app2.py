@@ -20,6 +20,12 @@ html_temp= """
     """
 
 def app():
+  [theme]
+  primaryColor = "#579D02"
+  backgroundColor = "#FFFFFF"
+  secondaryBackgroundColor = "##272727"
+  textColor = "#272727"
+  font = "sans serif"
 # Download CSV data
   def filedownload(df, filename):
     csv = df.to_csv(index=False)
@@ -32,7 +38,7 @@ def app():
     uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
 
 # Displays the dataset
-  st.subheader('** Dataset**{color1}')
+  st.subheader('** Dataset**')
   if uploaded_file is not None:
     df = pd.read_csv(uploaded_file,index_col=0)
 
