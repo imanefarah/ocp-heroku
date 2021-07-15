@@ -45,4 +45,4 @@ app = MultiApp()
 app.add_app("Simple User",app2.app)
 app.add_app("Data Scientist User",main.app)
 # The main app
-app.run()
+app.run() 
