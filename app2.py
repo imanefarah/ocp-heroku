@@ -1,6 +1,5 @@
 import pandas as pd
 import streamlit as st
-import markdown
 import numpy as np
 import sweetviz as sv
 import matplotlib.pyplot as plt
@@ -12,15 +11,9 @@ from sklearn.linear_model import Lasso, Ridge
 from sklearn.linear_model import LassoCV
 from sklearn.linear_model import BayesianRidge
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-import os
 from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 import plotly.express as px
-import quandl
-import yfinance as yf
-from streamlit_tags import st_tags_sidebar
-import pyarrow
-
 padding = 0
 st.markdown(f""" <style>
    .reportview-container .main .block-container{{
