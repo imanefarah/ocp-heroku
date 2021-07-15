@@ -15,13 +15,6 @@ import plotly.express as px
 
 
 def app():
-  [theme]
-  primaryColor = "#579D02"
-  backgroundColor = "##272727"
-  secondaryBackgroundColor = "##272727"
-  textColor = "#fafafa"
-  font = "sans serif"
-
   padding = 0
   st.markdown(f""" <style>
     .reportview-container .main .block-container{{
