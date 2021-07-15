@@ -146,10 +146,7 @@ def app():
     fig.update_traces(line_color='#272727')
     fig.update_xaxes(rangeslider_visible=True)
     st.plotly_chart(fig)
-  if f4.button('Explore data'):
-    advert_report = sv.analyze(df)
-    advert_report.show_html('Advertising.html')
-
+ 
 #Model
   st.markdown('### ** Model**')
   st.write(f'Regressor = {Regressor_name}')
