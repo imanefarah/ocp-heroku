@@ -27,7 +27,7 @@ class MultiApp:
 
         app['function']()
 
-st.sidebar.image: st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/OCP_Group.svg/1200px-OCP_Group.svg.png", use_column_width=True)
+st.sidebar.image: st.sidebar.image("OCP.png", use_column_width=True)
 
 primaryColor = st.get_option("theme.primaryColor")
 s = f"""
