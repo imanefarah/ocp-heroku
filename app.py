@@ -27,7 +27,7 @@ class MultiApp:
 
         app['function']()
 
-st.sidebar.image: st.sidebar.image("https://lh3.googleusercontent.com/proxy/ND079E8kxHUE4WKVb-1s-sANQ1WR3KhOPBx7UzuGdIp2ZxI6f6wnsxiNIYA7HsX-wwVV4gksZlUuJrkGJMD1D3JJ5NfAdiIWm3Qj5hZlFV9sO31yYGgRhS_puRx9DjadmfX2upT8L8I", use_column_width=True)
+st.sidebar.image: st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/OCP_Group.svg/1200px-OCP_Group.svg.png, use_column_width=True)
 
 primaryColor = st.get_option("theme.primaryColor")
 s = f"""
