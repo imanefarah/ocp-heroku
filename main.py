@@ -8,13 +8,21 @@ import xgboost
 from sklearn.linear_model import Lasso,Ridge
 from sklearn.linear_model import LassoCV
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
+import os
 from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
 import plotly.express as px
 
 
-st.set_page_config(page_title='OCP Analysis')
 def app():
+  [theme]
+  primaryColor = "#579D02"
+  backgroundColor = "##272727"
+  secondaryBackgroundColor = "##272727"
+  textColor = "#fafafa"
+  font = "sans serif"
+
+  padding = 0
   st.markdown(f""" <style>
     .reportview-container .main .block-container{{
         padding-top: {padding}rem;
@@ -41,8 +49,8 @@ def app():
   if uploaded_file is not None:
     df = pd.read_csv(uploaded_file,index_col=0)
 
-
-  button_method=st.sidebar.radio('Select the method',['Embedded method','Choose lags'])
+  st.sidebar.header(' Select the method')
+  button_method=st.sidebar.radio('',['Embedded method','Choose lags'])
 
 
   def get_lags():
@@ -84,19 +92,19 @@ def app():
 
   features=df3.columns
 # Sidebar - feature selection
+  st.sidebar.header(' select feature')
   container = st.sidebar.beta_container()
   all = st.sidebar.checkbox("Select all")
   if all:
-    selected_feature = container.multiselect(" Select features:",list(features),list(features))
+    selected_feature = container.multiselect("",list(features),list(features))
   else:
-    selected_feature = container.multiselect(" Select features:", features)
+    selected_feature = container.multiselect("", features)
 
   df3=df3[selected_feature]
 
-
-
+  st.sidebar.header(' select regressor')
   Regressor_name = st.sidebar.selectbox(
-    'Select Regressor',
+    '',
     ('XGBOOST', 'RandomForestRegressor', 'Lasso')
    )
 
@@ -122,11 +130,11 @@ def app():
   X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=split_size, shuffle=False)
   f1,f2,f3,f4=st.beta_columns(4)
   if f1.button('show dataset'):
-   st.write(df3())
+   st.write(df3)
   if f2.button('Dataset dimension'):
      a1, a2, a3,a4,a5= st.beta_columns(5)
      a1.write('dataset')
-     a1.info(df.shape)
+     a1.info(df3.shape)
      with a2:
          a2.write('X_train')
          a2.info(X_train.shape)
@@ -141,10 +149,14 @@ def app():
 #visualization
   if f3.button('Data visualization'):
     plot_name = st.selectbox('Select variable', (df3.columns) )
-    fig=px.line(df3[f'{selected_feature}'], x=df3.index, y={selected_feature})
+    fig=px.line(df3[f'{plot_name}'], x=df3.index, y=f'{plot_name}')
+    fig.update_traces(line_color='#272727')
     fig.update_xaxes(rangeslider_visible=True)
     st.plotly_chart(fig)
-  
+  if f4.button('Explore data'):
+    advert_report = sv.analyze(df)
+    advert_report.show_html('Advertising.html')
+
 #Model
   st.markdown('### ** Model**')
   st.write(f'Regressor = {Regressor_name}')
@@ -181,7 +193,7 @@ def app():
     st.markdown('### ** Model Prediction**')
     c1, c2 = st.beta_columns(2)
     prediction = model.predict(X_last.values) + X_last['DAP '].values[0]
-    c1.write('last DAP')
+    c1.markdown('### Last DAP')
     c1.info(X_last['DAP '].values[0])
     with c2:
          c2.write('Predicted DAP')
