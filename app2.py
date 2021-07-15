@@ -104,9 +104,6 @@ def app():
         st.plotly_chart(fig)
     st.markdown('### Last DAP')
     st.info(X_last['DAP '].values)
-    if f4.button('Explore data'):
-        advert_report = sv.analyze(df)
-        advert_report.show_html('Advertising.html')
 
     # Model
     st.markdown('### Bayesian Ridge')
