@@ -27,7 +27,7 @@ class MultiApp:
 
         app['function']()
 
-st.sidebar.image: st.sidebar.image("OCP.png", use_column_width=True)
+st.sidebar.image: st.sidebar.image("https://www.enactus-morocco.org/wp-content/uploads/2020/05/logo-OCP-Quadri-261x300.png", use_column_width=True)
 
 primaryColor = st.get_option("theme.primaryColor")
 s = f"""
