@@ -106,7 +106,7 @@ def app():
     st.info(X_last['DAP '].values)
 
     # Model
-    st.markdown('### Bayesian Ridge')
+    st.markdown('### Random Forest')
     df_X = X_train
     df_Y = y_train
     y = y_test
